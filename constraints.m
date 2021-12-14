@@ -19,6 +19,8 @@ for tj = mbs.joints.translational
     q2 = q(body_idx(tj.body2));
     r1 = q1(1:2);
     r2 = q2(1:2);
+     A1 = rot(q1(3));
+    A2 = rot(q2(3));
     C(c_idx + (1:2)) = r1 + tj.s1 - r2 - tj.s2;
     c_idx = c_idx + 2;
 end
