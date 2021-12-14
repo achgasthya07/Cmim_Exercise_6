@@ -17,15 +17,16 @@ for rj = mbs.joints.revolute
 end
 
 for rj = mbs.joints.translational
-    q1_idx = body_idx(rj.body1);
-    q2_idx = body_idx(rj.body2);
+    q1_idx = body_idx(tj.body1);
+    q2_idx = body_idx(tj.body2);
+    A1 = rot(q1(3));
+    A2 = rot(q2(3));
     q1 = q(q1_idx);
     q2 = q(q2_idx);
-    Cq(c_idx + (1:2), q1_idx) = [eye(2), Omega * A1 * rj.s1];
-    Cq(c_idx + (1:2), q2_idx) = -[eye(2), Omega * A2 * rj.s2];
+    Cq(c_idx + (1:2), q1_idx) = [eye(2), Omega * A1 * tj.s1];
+    Cq(c_idx + (1:2), q2_idx) = -[eye(2), Omega * A2 * tj.s2];
     c_idx = c_idx + 2;
 end
-
 for sj = mbs.joints.simple
     q_idx = body_idx(sj.body);
     Cq(c_idx + 1, q_idx(sj.coord)) = 1;
