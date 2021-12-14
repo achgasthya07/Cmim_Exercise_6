@@ -1,4 +1,4 @@
-function [T, Q, Qp, niter] = kinematic_analysis(mbs, q0, h, t_end, tol)
+function [T, Q, Qp, Qdd niter] = kinematic_analysis(mbs, q0, h, t_end, tol)
 
 T = 0.0:h:t_end;
 nt = length(T);
