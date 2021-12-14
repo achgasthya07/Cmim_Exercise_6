@@ -20,4 +20,7 @@ for ii = 1 : nt
     qip = -Cq\Ct; % -Cq^-1*Ct
     Qp(ii, :) = qip';
     qi = qi + h .* qip;
+     %Below is acceleration analysis 
+     qdd = acceleration_kinematic(mbs,qi,qip,t);
+     Qdd(ii,:) = qdd;
 end
