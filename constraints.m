@@ -13,6 +13,7 @@ for rj = mbs.joints.revolute
     C(c_idx + (1:2)) = r1 + A1 * rj.s1 - r2 - A2 * rj.s2;
     c_idx = c_idx + 2;
 end
+
 for tj = mbs.joints.translational
     q1 = q(body_idx(tj.body1));
     q2 = q(body_idx(tj.body2));
