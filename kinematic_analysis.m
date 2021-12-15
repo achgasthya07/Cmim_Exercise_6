@@ -4,6 +4,8 @@ T = 0.0:h:t_end;
 nt = length(T);
 Q = zeros(nt, mbs.nq);
 Qp = zeros(nt, mbs.nq);
+Qdd = zeros(nt, mbs.nq);
+
 
 qi = q0;
 niter = zeros(1, nt);
